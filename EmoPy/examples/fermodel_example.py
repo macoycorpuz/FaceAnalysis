@@ -7,8 +7,13 @@ model = FERModel(target_emotions, verbose=True)
 print('Predicting on happy image...')
 model.predict(resource_filename('EmoPy.examples','image_data/sample_happy_image.png'))
 
-print('Predicting on disgust image...')
-model.predict(resource_filename('EmoPy.examples','image_data/sample_disgust_image.png'))
+# print('Predicting on disgust image...')
+# model.predict(resource_filename('EmoPy.examples','image_data/sample_disgust_image.png'))
 
-print('Predicting on anger image...')
-model.predict(resource_filename('EmoPy.examples','image_data/sample_anger_image2.png'))
+# print('Predicting on anger image...')
+# model.predict(resource_filename('EmoPy.examples','image_data/sample_anger_image2.png'))
+
+# print('Predicting on obama image...')
+# model.predict(resource_filename('EmoPy.examples','image_data/obama-smile.jpg'))
+
+# print(type(resource_filename('EmoPy.examples','image_data/sample_happy_image.png')))

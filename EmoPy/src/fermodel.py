@@ -39,6 +39,7 @@ class FERModel:
         self.target_dimensions = (48, 48)
         self.channels = 1
         self._initialize_model()
+        self.output_emotion = ''
 
     def _initialize_model(self):
         print('Initializing FER model parameters for target emotions: %s' % self.target_emotions)
@@ -58,6 +59,18 @@ class FERModel:
         final_image = np.array([np.array([resized_image]).reshape(list(self.target_dimensions)+[self.channels])])
         prediction = self.model.predict(final_image)
         self._print_prediction(prediction[0])
+
+    def predict_image_array(self, image_array):
+        image = image_array
+        gray_image = image
+        if len(image.shape) > 2:
+            gray_image = cv2.cvtColor(image, code=cv2.COLOR_BGR2GRAY)
+        resized_image = cv2.resize(gray_image, self.target_dimensions, interpolation=cv2.INTER_LINEAR)
+        final_image = np.array([np.array([resized_image]).reshape(list(self.target_dimensions)+[self.channels])])
+        prediction = self.model.predict(final_image)
+        self._print_prediction(prediction[0])
+        return self.output_emotion
+
 
     def _check_emotion_set_is_supported(self):
         """
@@ -107,3 +120,4 @@ class FERModel:
                 break
         print('Dominant emotion: %s' % dominant_emotion)
         print()
+        self.output_emotion = dominant_emotion
