@@ -14,3 +14,4 @@ venv/
 output/
 emopy_venv/
 venv
+EmoPy/examples/landmarks.dat

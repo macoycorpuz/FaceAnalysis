@@ -40,10 +40,10 @@ def main():
 	
 	video = cv2.VideoCapture(0)
 	ret, inputImg = video.read()
-	xo, xb, yo, yb = setROI(inputImg.shape, 800, 800)
+	xo, xb, yo, yb = setROI(inputImg.shape, 900, 720)
 	inputImg = inputImg[xo:xb, yo:yb]
 	alignment = AlignDlib('landmarks.dat')
-	boxColor = (255,0,0)
+	boxColor = (0,0,255)
 	boxThickness = 3
 	text = ''
 
