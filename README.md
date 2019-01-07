@@ -1,3 +1,17 @@
+# Live Video
+Run Live Video, go to examples directory:
+
+```
+python3 livevid.py
+```
+
+Added modules:
+- `livevid.py`
+- `align.py`
+
+Edited modules:
+- `fermodel.py` - Added a function `predict_image_array`. (Returns the dominant emotion)
+
 # EmoPy
 EmoPy is a python toolkit with deep neural net classes which accurately predict emotions given images of people's faces.
 
